@@ -39,7 +39,7 @@ public class RegistrationController {
     public String showUpdateForm(@PathVariable("id") Long id, Model model) {
         User user = userService.findById(id);
         model.addAttribute("user", user);
-        return "register-form"; // Reuse the registration form for updates
+        return "register-form";
     }
 
     @GetMapping("/delete/{id}")

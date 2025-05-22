@@ -2,8 +2,12 @@ package com.register.main.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.*;
 
+@Entity
+@Table(name = "users")
 public class User {
     @NotBlank(message = "First name is required")
     private String firstName;
