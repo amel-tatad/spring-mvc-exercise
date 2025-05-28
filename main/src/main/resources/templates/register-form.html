@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+  <head>
     <title>Register</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Register</h1>
     <form action="/submit" method="post" th:object="${user}">
-        <input type="hidden" th:field="*{id}" />  <div>
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" th:field="*{firstName}" />
-        </div>
-        <div>
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" th:field="*{lastName}" />
-        </div>
-        <div>
-            <label for="dob">Date of Birth:</label>
-            <input type="date" id="dob" th:field="*{dob}" />
-        </div>
-        <div>
-            <label>Gender:</label>
-            <input type="radio" id="male" th:field="*{gender}" value="Male" />
-            <label for="male">Male</label>
-            <input type="radio" id="female" th:field="*{gender}" value="Female" />
-            <label for="female">Female</label>
-        </div>
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" th:field="*{username}" />
-        </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" th:field="*{password}" />
-        </div>
-        <div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" th:field="*{email}" />
-        </div>
-        <div>
-            <label for="phone">Phone Number:</label>
-            <input type="text" id="phone" th:field="*{phone}" />
-        </div>
-        <div>
-            <input type="checkbox" id="terms" th:field="*{terms}" />
-            <label for="terms">I agree to the terms and conditions</label>
-        </div>
-        <button type="submit">Register</button>
-        <a href="/list">Back to List</a>
+      <input type="hidden" th:field="*{id}" />
+      <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" th:field="*{firstName}" />
+      </div>
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" th:field="*{lastName}" />
+      </div>
+      <div>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" th:field="*{dob}" />
+      </div>
+      <div>
+        <label>Gender:</label>
+        <input type="radio" id="male" th:field="*{gender}" value="Male" />
+        <label for="male">Male</label>
+        <input type="radio" id="female" th:field="*{gender}" value="Female" />
+        <label for="female">Female</label>
+      </div>
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" th:field="*{username}" />
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" th:field="*{password}" />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" th:field="*{email}" />
+      </div>
+      <div>
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" th:field="*{phone}" />
+      </div>
+      <div>
+        <input type="checkbox" id="terms" th:field="*{terms}" />
+        <label for="terms">I agree to the terms and conditions</label>
+      </div>
+      <button type="submit">Register</button>
+      <a href="/list">Back to List</a>
     </form>
-</body>
+  </body>
 </html>

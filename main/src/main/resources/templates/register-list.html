@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Member List</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        padding: 20px;
+      }
+      .table th,
+      .table td {
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="my-4">Member List</h2>
+
+      <a th:href="@{/register}" class="btn btn-primary mb-3"
+        >Register New User</a
+      >
+      <div th:if="${message}" class="alert alert-success" role="alert">
+        <p th:text="${message}"></p>
+      </div>
+
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="user : ${users}">
+            <td th:text="${user.firstName} + ' ' + ${user.lastName}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.username}"></td>
+            <td>
+              <a
+                th:href="@{/update(userId=${user.id})}"
+                class="btn btn-warning btn-sm"
+                sec:authorize="hasAnyRole('ADMIN', 'ASSTADMIN')"
+                >Edit</a
+              >
+              <a
+                th:href="@{/delete(userId=${user.id})}"
+                class="btn btn-danger btn-sm ml-1"
+                onclick="return confirm('Are you sure you want to delete this user?');"
+                sec:authorize="hasRole('ADMIN')"
+                >Delete</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <form th:action="@{/logout}" method="post" class="mt-4 text-right">
+        <button type="submit" class="btn btn-secondary">Logout</button>
+      </form>
+    </div>
+  </body>
+</html>

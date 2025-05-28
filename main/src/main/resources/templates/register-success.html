@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Registration Successful</title>
-</head>
-<body>
-    <h1>Registration Successful!</h1>
-    <p>Thank you for registering.</p>
-    <a href="/list">Back to List</a>
-</body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Success</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="my-4">Registration Successful!</h2>
+      <p>Thank you for registering.</p>
+      <a th:href="@{/list}" class="btn btn-primary">Back to List</a>
+    </div>
+  </body>
 </html>
